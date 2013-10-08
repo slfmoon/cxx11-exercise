@@ -2,10 +2,10 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include <limits>
+// #include <limits>
 
 int main(int argc, char *argv[]) {
-	std::cout << "\t --- FizzBuzz Program 日本語 ---" << std::endl << std::endl;
+	std::cout << "\t --- FizzBuzz Program ---" << std::endl << std::endl;
 	int num = 0;
 
 	if(argc < 2){
@@ -16,16 +16,15 @@ int main(int argc, char *argv[]) {
 		is >> num; // if > 2147483647 : auto cut
 	}
 
-//	if(num < 1 || num > std::numeric_limits<int>::max()){
 	if(num < 1 || num > 100000){
 		std::cout << "Invalid or too big!" << std::endl;
 		return -1;
 	}
-	std::cout << "Input number: " << num << " / Max number: " << std::numeric_limits<int>::max() << std::endl << std::endl;
+//	std::cout << "Input number: " << num << " / Max number: " << std::numeric_limits<int>::max() << std::endl << std::endl;
+	std::cout << "Input number: " << num << std::endl;
 
 	auto myfizz = [] (int x, int fb) -> bool {
-		// without %
-		// return (((x / fb) * fb) == x);
+		// without % : return (((x / fb) * fb) == x);
 			return ((x % fb) == 0);
 		};
 
